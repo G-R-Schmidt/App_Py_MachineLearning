@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>ML Web App</title>
+</head>
+<body>
+    <h1>Machine Learning Web App</h1>
+    <form action="/train_test" method="post">
+        <label for="classifier">Selecione o Classificador:</label>
+        <select name="classifier" id="classifier">
+            <option value="knn">KNN</option>
+            <option value="mlp">MLP</option>
+            <option value="dt">Árvore de Decisão</option>
+            <option value="rf">Floresta Aleatória</option>
+        </select>
+        <br>
+        <label for="k_value">Valor de k (apenas para KNN):</label>
+        <input type="text" name="k_value">
+        <br>
+        <input type="submit" value="Treinar e Testar">
+    </form>
+    <div id="results">
+        <!-- Os resultados serão exibidos aqui -->
+    </div>
+</body>
+</html>
